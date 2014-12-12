@@ -77,6 +77,7 @@ public class Ghost : MonoBehaviour {
 
 	void Move(string input) //Reads an element from an array and moves the Ghost accordingly
 	{
+		Debug.Log ("MOVE");
 		switch (input) 
 		{
 		case "Left" :
