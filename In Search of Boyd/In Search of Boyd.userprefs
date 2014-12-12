@@ -1,20 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scenes\Script\toLevel.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Player\Ghost.cs">
     <Files>
-      <File FileName="Assets\Obstacles\Scripts\DoorScript2.cs" Line="1" Column="1" />
-      <File FileName="Assets\Obstacles\Scripts\Trigger.cs" Line="1" Column="1" />
-      <File FileName="Assets\Obstacles\Scripts\ScoreScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Obstacles\Scripts\MovingEnemy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Obstacles\Scripts\ItemScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Obstacles\Scripts\Coin_Script.cs" Line="1" Column="1" />
-      <File FileName="Assets\Player\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\Player\RecordingTrigger.cs" Line="1" Column="1" />
-      <File FileName="Assets\Player\Ghost.cs" Line="1" Column="1" />
-      <File FileName="Assets\Player\PlayRecording.cs" Line="1" Column="1" />
-      <File FileName="Assets\Player\RecordingInfo.cs" Line="1" Column="1" />
-      <File FileName="Assets\Player\StopRecording.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scenes\Script\toLevel.cs" Line="1" Column="1" />
+      <File FileName="Assets\Player\Ghost.cs" Line="80" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
