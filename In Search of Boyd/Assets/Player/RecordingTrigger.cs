@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System;
 using System.Collections;
 
@@ -9,6 +9,7 @@ public class RecordingTrigger : MonoBehaviour {
 	public GameObject playerObject;
 	public Player playerScript;
 	public string recordingNumber;
+	public GameObject ghost;
 
 	// Use this for initialization
 	void Start () {
@@ -25,9 +26,12 @@ public class RecordingTrigger : MonoBehaviour {
 	{
 		if (playerScript.isRecording == false) 
 		{
-			playerScript.currentlySelectedArray = recordingNumber;
+			ghost.SetActive(false);
+			playerScript.currentlySelectedArray = recordingNumber; //Tells the player which array it should write to.
 			playerScript.isRecording = true;
-			playerScript.targetPosition = playerObject.transform.position;
+			playerObject.transform.position = ghost.transform.position;
+			playerScript.nextPosition = playerObject.transform.position;
+			playerScript.currentPosition = playerObject.transform.position;
 
 			switch (recordingNumber) //Tells which array within RecordingInfo this trigger will be associated with
 			{

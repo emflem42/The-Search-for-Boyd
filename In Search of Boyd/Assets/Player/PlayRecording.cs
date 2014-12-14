@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class PlayRecording : MonoBehaviour {
@@ -40,7 +40,7 @@ public class PlayRecording : MonoBehaviour {
 			isActive = false;
 			counter = 0;
 			ghostObject.transform.position = ghostScript.initialPosition;
-			ghostScript.targetPosition = ghostScript.initialPosition;
+			ghostScript.nextPosition = ghostScript.initialPosition;
 		}
 
 		if (isActive && playTimer > 0.4f) 
