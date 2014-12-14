@@ -94,7 +94,10 @@ public class Player : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		currentPosition = previousPosition;
-		nextPosition = previousPosition;
+		if (other.gameObject.tag == "Wall")
+		{
+			currentPosition = previousPosition;
+			nextPosition = previousPosition;
+		}
 	}
 }
