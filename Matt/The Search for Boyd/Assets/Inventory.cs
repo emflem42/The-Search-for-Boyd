@@ -42,13 +42,15 @@ public class Inventory : MonoBehaviour
 	void inventoryWindowMethod (int windowID)
 	{
 			
-		GUILayout.BeginArea(new Rect(50,30,700,100));
+		GUILayout.BeginArea(new Rect(50,30,750,100));
 		GUILayout.BeginHorizontal ();
-		GUILayout.Box (itemScript1.inventoryObject, GUILayout.Height (50));
-		GUILayout.Box (itemScript2.inventoryObject, GUILayout.Height (50));
-		GUILayout.Box (itemScript3.inventoryObject, GUILayout.Height (50));
-		GUILayout.Box (itemScript4.inventoryObject, GUILayout.Height (50));
-		GUILayout.Box (itemScript5.inventoryObject, GUILayout.Height (50));
+		GUILayout.Box ("", GUILayout.Height (50), GUILayout.Width (100));
+		GUILayout.Box (itemScript1.inventoryObject, GUILayout.Height (50), GUILayout.Width(100));
+		GUILayout.Box (itemScript2.inventoryObject, GUILayout.Height (50), GUILayout.Width(100));
+		GUILayout.Box (itemScript3.inventoryObject, GUILayout.Height (50), GUILayout.Width(100));
+		GUILayout.Box (itemScript4.inventoryObject, GUILayout.Height (50), GUILayout.Width(100));
+		GUILayout.Box (itemScript5.inventoryObject, GUILayout.Height (50), GUILayout.Width(100));
+		GUILayout.Box ("", GUILayout.Height (50), GUILayout.Width (100));
 		GUILayout.EndHorizontal ();
 		GUILayout.EndArea ();
 
