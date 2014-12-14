@@ -31,22 +31,22 @@ public class Ghost : MonoBehaviour {
 		{
 			if (Input.GetKeyDown(KeyCode.LeftArrow))
 			{
-				Move(readArray[playerScript.movementCounter]);
+				Move(readArray[playerScript.movementCounter - 1]);
 			}
 
 			else if (Input.GetKeyDown(KeyCode.RightArrow))
 			{
-				Move(readArray[playerScript.movementCounter]);
+				Move(readArray[playerScript.movementCounter - 1]);
 			}
 
 			else if (Input.GetKeyDown(KeyCode.UpArrow))
 			{
-				Move(readArray[playerScript.movementCounter]);
+				Move(readArray[playerScript.movementCounter - 1]);
 			}
 
 			else if (Input.GetKeyDown(KeyCode.DownArrow))
 			{
-				Move(readArray[playerScript.movementCounter]);
+				Move(readArray[playerScript.movementCounter - 1]);
 			}
 
 			transform.position = Vector3.Lerp (transform.position, nextPosition, 0.3f);
@@ -110,7 +110,12 @@ public class Ghost : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		Debug.Log ("Ghost hit a wall");
-		nextPosition = previousPosition;
+
+		if (other.gameObject.tag == "Wall") 
+		{
+			Debug.Log ("Ghost hit the wall");
+			currentPosition = previousPosition;
+			nextPosition = previousPosition;
+		}
 	}
 }

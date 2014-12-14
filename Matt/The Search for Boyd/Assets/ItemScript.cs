@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+[ExecuteInEditMode]
 
 public class ItemScript : MonoBehaviour 
 {
 	public Inventory inventory;
 	public GameObject[] itemArray = new GameObject[10];
 	public int counter = 0;
-	public string inventoryObject; //adjust to gameObject
+	public Texture inventoryObject; //adjust to gameObject
 
 	//public bool isActive;
 
@@ -32,7 +33,7 @@ public class ItemScript : MonoBehaviour
 
 
 		this.gameObject.SetActive (false);
-		inventoryObject = gameObject.name;
+		inventoryObject = gameObject.guiTexture.texture;
 
 			//Debug.Log ("THIS ITEM IS COLLECTED");
 		//isActive = false;
