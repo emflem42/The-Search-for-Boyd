@@ -52,9 +52,11 @@
      <Compile Include="Assets\Obstacles\Scripts\MovingEnemy.cs" />
      <Compile Include="Assets\Obstacles\Scripts\ScoreScript.cs" />
      <Compile Include="Assets\Obstacles\Scripts\Trigger.cs" />
+     <Compile Include="Assets\Player\Animations\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Player\Ghost.cs" />
      <Compile Include="Assets\Player\PlayRecording.cs" />
      <Compile Include="Assets\Player\Player.cs" />
+     <Compile Include="Assets\Player\PlayerAnimationController.cs" />
      <Compile Include="Assets\Player\RecordingInfo.cs" />
      <Compile Include="Assets\Player\RecordingTrigger.cs" />
      <Compile Include="Assets\Player\StopRecording.cs" />
