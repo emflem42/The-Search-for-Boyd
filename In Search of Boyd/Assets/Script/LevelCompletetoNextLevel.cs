@@ -17,6 +17,6 @@ public class LevelCompletetoNextLevel : MonoBehaviour {
 
 	void OnMouseDown (){
 	
-		Application.LoadLevel (levelNext);
+		Application.LoadLevel (levelNext+1);
 	}
 }

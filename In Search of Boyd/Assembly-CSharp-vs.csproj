@@ -64,7 +64,7 @@
      <Compile Include="Assets\Script\LevelCompletetoReplayLevel.cs" />
      <Compile Include="Assets\Script\LevelQuittoLevelSelect.cs" />
      <Compile Include="Assets\Script\LeveltoLevelComplete.cs" />
-     <Compile Include="Assets\Script\LeveltoLevelSelect.cs" />
+     <Compile Include="Assets\Script\LeveltoLevelSelect2.cs" />
      <Compile Include="Assets\Script\WIPtoLevels.cs" />
      <Compile Include="Assets\Script\charBubble.cs" />
      <Compile Include="Assets\Script\toGenderSelect.cs" />

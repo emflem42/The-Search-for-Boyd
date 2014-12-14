@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LeveltoLevelSelect : MonoBehaviour {
+public class LeveltoLevelSelect2 : MonoBehaviour {
 
 	public LevelBeat beat;
 	public int levelID;

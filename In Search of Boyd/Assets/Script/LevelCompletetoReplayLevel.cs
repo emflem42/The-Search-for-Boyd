@@ -17,6 +17,6 @@ public class LevelCompletetoReplayLevel : MonoBehaviour {
 
 	void OnMouseDown(){
 	
-		Application.LoadLevel (levelNumber);
+		Application.LoadLevel (levelNumber+1);
 	}
 }
