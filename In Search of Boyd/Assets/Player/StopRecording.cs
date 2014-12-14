@@ -32,13 +32,17 @@ public class StopRecording : MonoBehaviour {
 		//Set the player back to their start position
 		playerScript.movementCounter = 0;
 		playerObject.transform.position = playerScript.recordingStartPosition;
+		playerScript.nextPosition = playerScript.recordingStartPosition;
+		playerScript.currentPosition = playerScript.recordingStartPosition;
 		playerScript.isRecording = false;
 		playerScript.currentlySelectedArray = null;
 
 		//Set the ghosts back to their starting position
 		for (int j = 0; j < 3; j++)
 		{
-			ghostScripts[j].targetPosition = ghostScripts[j].initialPosition;
+			ghostObjects[j].SetActive(true);
+			ghostScripts[j].nextPosition = ghostScripts[j].initialPosition;
+			ghostScripts[j].currentPosition = ghostScripts[j].initialPosition;
 			ghostObjects[j].transform.position = ghostScripts[j].initialPosition;
 		}
 	}

@@ -8,8 +8,10 @@ public class Ghost : MonoBehaviour {
 	public GameObject playerObject;
 	string[] readArray;
 	public string ghostRecording;
-	public Vector3 targetPosition;
+	public Vector3 nextPosition;
 	public Vector3 initialPosition;
+	public Vector3 currentPosition;
+	public Vector3 previousPosition;
 	int moveDistance = 1;
 	public bool isPlaying = false;
 
@@ -18,40 +20,41 @@ public class Ghost : MonoBehaviour {
 		recorder = recorderObject.GetComponent<RecordingInfo> ();
 		playerScript = playerObject.GetComponent<Player> ();
 		setRecording ();
-		targetPosition = transform.position;
+		nextPosition = transform.position;
 		initialPosition = transform.position;
+		currentPosition = transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (playerScript.isRecording && readArray[playerScript.movementCounter] + 1 != null) 
 		{
-			if (Input.GetKeyDown(KeyCode.LeftArrow) && playerScript.moveTimer >= 1.0f)
+			if (Input.GetKeyDown(KeyCode.LeftArrow))
 			{
 				Move(readArray[playerScript.movementCounter]);
 			}
 
-			else if (Input.GetKeyDown(KeyCode.RightArrow) && playerScript.moveTimer >= 1.0f)
+			else if (Input.GetKeyDown(KeyCode.RightArrow))
 			{
 				Move(readArray[playerScript.movementCounter]);
 			}
 
-			else if (Input.GetKeyDown(KeyCode.UpArrow) && playerScript.moveTimer >= 1.0f)
+			else if (Input.GetKeyDown(KeyCode.UpArrow))
 			{
 				Move(readArray[playerScript.movementCounter]);
 			}
 
-			else if (Input.GetKeyDown(KeyCode.DownArrow) && playerScript.moveTimer >= 1.0f)
+			else if (Input.GetKeyDown(KeyCode.DownArrow))
 			{
 				Move(readArray[playerScript.movementCounter]);
 			}
 
-			transform.position = Vector3.Lerp (transform.position, targetPosition, 0.3f);
+			transform.position = Vector3.Lerp (transform.position, nextPosition, 0.3f);
 		}
 
 		if (isPlaying) 
 		{
-			transform.position = Vector3.Lerp(transform.position, targetPosition, 0.6f);
+			transform.position = Vector3.Lerp(transform.position, nextPosition, 0.6f);
 		}
 	
 	}
@@ -77,24 +80,37 @@ public class Ghost : MonoBehaviour {
 
 	void Move(string input) //Reads an element from an array and moves the Ghost accordingly
 	{
-		Debug.Log ("MOVE");
 		switch (input) 
 		{
 		case "Left" :
-			targetPosition = new Vector3 (transform.position.x - moveDistance, transform.position.y, transform.position.z);
+			previousPosition = currentPosition;
+			nextPosition = new Vector3 (currentPosition.x - moveDistance, currentPosition.y, currentPosition.z);
+			currentPosition = nextPosition;
 			break;
 		case "Right":
-			targetPosition = new Vector3 (transform.position.x + moveDistance, transform.position.y, transform.position.z);
+			previousPosition = currentPosition;
+			nextPosition = new Vector3 (currentPosition.x + moveDistance, currentPosition.y, currentPosition.z);
+			currentPosition = nextPosition;
 			break;
 		case "Up":
-			targetPosition = new Vector3 (transform.position.x, transform.position.y + moveDistance, transform.position.z);
+			previousPosition = currentPosition;
+			nextPosition = new Vector3 (currentPosition.x, currentPosition.y + moveDistance, currentPosition.z);
+			currentPosition = nextPosition;
 			break;
 		case "Down":
-			targetPosition = new Vector3 (transform.position.x, transform.position.y - moveDistance, transform.position.z);
+			previousPosition = currentPosition;
+			nextPosition = new Vector3 (currentPosition.x, currentPosition.y - moveDistance, currentPosition.z);
+			currentPosition = nextPosition;
 			break;
 		default:
 			Debug.Log("Could not find array element");
 			break;
 		}
+	}
+
+	void OnTriggerEnter2D (Collider2D other)
+	{
+		Debug.Log ("Ghost hit a wall");
+		nextPosition = previousPosition;
 	}
 }
