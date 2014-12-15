@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LeveltoLevelSelect : MonoBehaviour {
+public class LeveltoLevelComplete : MonoBehaviour {
 
 	public LevelBeat beat;
 	public int levelID;
@@ -10,6 +10,7 @@ public class LeveltoLevelSelect : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		beat = GameObject.Find ("LevelBeatObject").GetComponent<LevelBeat> ();
+
 	}
 	
 	// Update is called once per frame
@@ -30,8 +31,9 @@ public class LeveltoLevelSelect : MonoBehaviour {
 		if (beat.levelBeat == levelID)
 		{
 			beat.levelBeat++;
+			Debug.Log("hi");
 		}
-
+		Debug.Log ("yooooo");
 		Application.LoadLevel (levelCompleteID); //Make sure this goes to LevelComplete
 	}
 }
